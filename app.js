@@ -46,14 +46,23 @@ function chooseOperator(op) {
 }
 
 function calculate() {
-    if (operator === "+" && previousValue !== null) {
-        const current = parseFloat(currentValue.replace(",", "."));
-        const result = previousValue + current;
+    if (previousValue === null || operator === null) return;
 
-        currentValue = result.toString().replace(".", ",");
-        operator = null;
-        previousValue = null;
+    const current = parseFloat(currentValue.replace(",", "."));
+    let result = 0;
+
+    switch (operator) {
+        case "+":
+            result = previousValue + current;
+            break;
+        case "−":
+            result = previousValue - current;
+            break;
     }
+
+    currentValue = result.toString().replace(".", ",");
+    operator = null;
+    previousValue = null;
 }
 
 function clearAll() {
