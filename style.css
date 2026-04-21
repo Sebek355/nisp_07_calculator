@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    background: #1c1c1c;
+}
+
+.calculator {
+    width: 320px;
+    background: #2b2b2b;
+    border-radius: 20px;
+    padding: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+}
+
+.display {
+    height: 80px;
+    color: white;
+    font-size: 2.5rem;
+    text-align: right;
+    padding: 20px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.btn {
+    height: 60px;
+    border: none;
+    border-radius: 50%;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* Kolory w stylu macOS */
+.number {
+    background: #505050;
+    color: white;
+}
+
+.function {
+    background: #a5a5a5;
+    color: black;
+}
+
+.operator {
+    background: #ff9f0a;
+    color: white;
+}
+
+/* Zero szersze */
+.zero {
+    grid-column: span 2;
+    border-radius: 40px;
+    text-align: left;
+    padding-left: 25px;
+}
+
+/* Hover efekt */
+.btn:hover {
+    filter: brightness(1.2);
+}
