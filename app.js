@@ -58,6 +58,17 @@ function calculate() {
         case "−":
             result = previousValue - current;
             break;
+        case "×":
+            result = previousValue * current;
+            break;
+        case "÷":
+            if (current === 0) {
+                alert("Nie można dzielić przez zero");
+                clearAll();
+                return;
+            }
+            result = previousValue / current;
+            break;
     }
 
     currentValue = result.toString().replace(".", ",");
