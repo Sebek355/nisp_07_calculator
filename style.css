@@ -10,38 +10,45 @@ body {
 
 .calculator {
     width: 320px;
+    padding: 20px;
     background: #2b2b2b;
-    border-radius: 20px;
-    padding: 15px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    border-radius: 25px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.6);
 }
 
+/* WYŻSZY WYŚWIETLACZ */
 .display {
-    height: 80px;
+    height: 100px;
     color: white;
-    font-size: 2.5rem;
+    font-size: 3rem;
     text-align: right;
     padding: 20px;
     box-sizing: border-box;
     overflow: hidden;
 }
 
+/* GRID */
 .buttons {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    gap: 10px;
+    gap: 12px;
 }
 
+/* IDEALNE KOŁA */
 .btn {
-    height: 60px;
+    aspect-ratio: 1 / 1; /* robi idealne koło */
+    width: 100%;
     border: none;
     border-radius: 50%;
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     cursor: pointer;
     transition: 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-/* Kolory w stylu macOS */
+/* Kolory */
 .number {
     background: #505050;
     color: white;
@@ -57,15 +64,22 @@ body {
     color: white;
 }
 
-/* Zero szersze */
+/* ZERO – poprawione (nie jajko, tylko styl macOS) */
 .zero {
     grid-column: span 2;
     border-radius: 40px;
-    text-align: left;
+    aspect-ratio: unset;
+    height: 70px;
+    justify-content: flex-start;
     padding-left: 25px;
 }
 
-/* Hover efekt */
+/* Hover */
 .btn:hover {
-    filter: brightness(1.2);
+    filter: brightness(1.25);
+}
+
+/* Klik efekt */
+.btn:active {
+    transform: scale(0.95);
 }
